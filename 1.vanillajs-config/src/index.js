@@ -20,3 +20,4 @@ console.log(data)
 const map = new Map();
 map.set('name','KK')
 console.log(map)
+console.log(233333321)
