@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kong-sample-lib": "^1.0.0"
+    "kong-sample-lib": "^1.0.1"
   }
 }

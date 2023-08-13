@@ -1,5 +1,4 @@
-const {today, sum, today2} = require('./dist');
-
-console.log(today())
-console.log(sum(1, 2))
-console.log(today2())
+const kongLib = require('./dist');
+console.log(kongLib.today())
+console.log(kongLib.today2())
+console.log(kongLib.sum(1,2))
