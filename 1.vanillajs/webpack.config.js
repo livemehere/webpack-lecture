@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -53,5 +54,15 @@ module.exports = {
         }),
         new MiniCssExtractPlugin(), // (js 에서 import 한 css 도 별도의 파일로 추출됨)
         new webpack.HotModuleReplacementPlugin(),  // 모든 코드가 아니라 교체가능한 모듈만 반영됨
-    ]
+    ],
+    optimization: {
+        minimize:true,
+        minimizer: [new TerserPlugin({
+            terserOptions: {
+                compress: {
+                    drop_console: false // 콘솔 로그를 제거한다
+                }
+            }
+        })]
+    }
 }
